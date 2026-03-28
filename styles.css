@@ -21,8 +21,7 @@ a { color: inherit; text-decoration: none; }
 .container { width: min(1120px, calc(100% - 3rem)); margin: 0 auto; }
 
 .site-header {
-  position: sticky;
-  top: 0;
+  position: sticky; top: 0;
   background: rgba(11, 17, 27, 0.85);
   border-bottom: 1px solid var(--line);
   backdrop-filter: blur(8px);
@@ -53,7 +52,7 @@ a { color: inherit; text-decoration: none; }
 .hero-panel h2 { margin-top: 0; }
 .hero-panel ul { margin: 0; padding-left: 1.2rem; }
 
-.positioning-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255, 255, 255, 0.02); }
+.positioning-strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: rgba(255,255,255,0.02); }
 .positioning-strip .container { padding: 1.4rem 0; }
 .positioning-strip p { margin: 0 0 1rem; }
 .tag-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0.8rem; }
@@ -94,7 +93,7 @@ a { color: inherit; text-decoration: none; }
   text-align: center;
   border: 1px solid var(--line);
   border-radius: 1rem;
-  background: linear-gradient(145deg, rgba(125, 162, 255, 0.15), rgba(125, 162, 255, 0.03));
+  background: linear-gradient(145deg, rgba(125,162,255,0.15), rgba(125,162,255,0.03));
   margin-bottom: 3rem;
 }
 .final-cta p { margin-inline: auto; }
@@ -103,7 +102,7 @@ a { color: inherit; text-decoration: none; }
   max-width: 900px;
   margin: 1.25rem auto 0;
   text-align: left;
-  background: rgba(12, 17, 26, 0.55);
+  background: rgba(12,17,26,0.55);
   border: 1px solid var(--line);
   border-radius: .9rem;
   padding: 1rem;
@@ -111,13 +110,24 @@ a { color: inherit; text-decoration: none; }
 .qual-form h3 { margin: 0 0 .7rem; }
 .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .8rem; }
 label { display: grid; gap: .35rem; color: var(--muted); font-size: .9rem; }
-input,
-select {
+input, select {
   background: #0f1522;
   color: var(--text);
   border: 1px solid var(--line);
   border-radius: .55rem;
   padding: .65rem .7rem;
+}
+input:focus, select:focus { outline: none; border-color: var(--accent); }
+
+/* Calendly — inherits your dark theme */
+.calendly-section { margin-top: 3rem; }
+.calendly-section h3 { margin: 0 0 1rem; font-size: 1.1rem; }
+.calendly-inline-widget {
+  min-width: 320px;
+  height: 700px;
+  border: 1px solid var(--line);
+  border-radius: 0.9rem;
+  overflow: hidden;
 }
 
 .site-footer { border-top: 1px solid var(--line); padding: 2.5rem 0; }
@@ -129,7 +139,6 @@ select {
   .cards-2, .cards-3, .cards-4, .cards-5, .faq-list, .tag-grid, .form-grid { grid-template-columns: 1fr 1fr; }
   .nav-links { display: none; }
 }
-
 @media (max-width: 640px) {
   .cards-2, .cards-3, .cards-4, .cards-5, .faq-list, .tag-grid, .form-grid { grid-template-columns: 1fr; }
   .container { width: min(1120px, calc(100% - 1.5rem)); }
