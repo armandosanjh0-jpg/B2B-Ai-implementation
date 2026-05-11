@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Client Login | AI With You</title>
+    <meta name="description" content="Client login for AI With You implementation workspace." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header"><nav class="container nav"><a class="logo" href="index.html">AI With You</a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="use-cases.html">Use Cases</a></li><li><a href="faq.html">FAQ</a></li><li><a href="about.html">About</a></li></ul><a class="btn btn-secondary btn-small" href="login.html">Client Login</a><a class="btn btn-small" href="book-a-call.html">Book a Call</a></nav></header>
+    <main class="container section" style="max-width: 760px;">
+      <p class="section-label">Client portal</p>
+      <h1>Login to your implementation workspace</h1>
+      <p>For active clients: access onboarding docs, workflow plans, training recordings, and support updates.</p>
+      <form class="qual-form" method="post" action="portal.html">
+        <div class="form-grid">
+          <label>Work email<input type="email" name="email" required /></label>
+          <label>Password<input type="password" name="password" required /></label>
+        </div>
+        <div class="hero-actions">
+          <button class="btn" type="submit">Login</button>
+          <a class="btn btn-secondary" href="book-a-call.html">Need access? Book a call</a>
+        </div>
+        <p class="muted">Forgot your password? Email <a href="mailto:hello@aiwithyou.com">hello@aiwithyou.com</a>.</p>
+      </form>
+    </main>
+  </body>
+</html>

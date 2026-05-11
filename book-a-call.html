@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Discovery Call | AI With You</title>
+    <meta name="description" content="Book a 20-minute AI workflow discovery call with AI With You." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header"><nav class="container nav"><a class="logo" href="index.html">AI With You</a><ul class="nav-links"><li><a href="index.html">Home</a></li><li><a href="services.html">Services</a></li><li><a href="how-it-works.html">How It Works</a></li><li><a href="use-cases.html">Use Cases</a></li><li><a href="faq.html">FAQ</a></li><li><a href="about.html">About</a></li></ul><a class="btn btn-secondary btn-small" href="login.html">Client Login</a><a class="btn btn-small" href="book-a-call.html">Book a Call</a></nav></header>
+    <main class="container section">
+      <p class="section-label">Book a Discovery Call</p>
+      <h1>If your team is exploring Claude Code, ChatGPT Codex, or practical AI workflows, this call is for you.</h1>
+      <p>We use this conversation to understand your current setup, where adoption is breaking down, and whether there is a practical implementation fit.</p>
+
+      <div class="grid cards-2">
+        <article class="card">
+          <h2>What this call is for</h2>
+          <ul>
+            <li>Teams exploring AI workflow implementation</li>
+            <li>Businesses wanting Claude Code or ChatGPT Codex setup</li>
+            <li>Leaders who want team training and real adoption</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h2>What this call is not for</h2>
+          <ul>
+            <li>General curiosity with no workflow need</li>
+            <li>People looking for free technical support</li>
+            <li>Teams with no clear use case or internal owner</li>
+          </ul>
+          <p><strong>Call length:</strong> 20 minutes</p>
+        </article>
+      </div>
+
+      <div id="form-status" class="card" style="display:none; margin-bottom: 1rem;" role="status" aria-live="polite"></div>
+      <form id="discovery-form" class="qual-form" method="post" action="confirmation.html" name="discovery-call" data-netlify="true" netlify-honeypot="bot-field">
+        <h2>Qualification form</h2>
+        <input type="hidden" name="form-name" value="discovery-call" />
+        <p hidden><label>Do not fill this out if you're human: <input name="bot-field" /></label></p>
+        <div class="form-grid">
+          <label>Full name*<input type="text" name="full_name" required /></label>
+          <label>Work email*<input type="email" name="work_email" required /></label>
+          <label>Company name*<input type="text" name="company_name" required /></label>
+          <label>Company website*<input type="url" name="company_website" required /></label>
+          <label>Your role*<input type="text" name="role" required /></label>
+          <label>Team size*<input type="text" name="team_size" required /></label>
+          <label>What are you hoping AI will help your team do?*<input type="text" name="ai_goal" required /></label>
+          <label>Which tools are you currently exploring or using?*<select name="tools" required><option>Claude Code</option><option>ChatGPT Codex</option><option>ChatGPT Team / Enterprise</option><option>Other</option><option>None yet</option></select></label>
+          <label>What is your biggest workflow bottleneck right now?*<input type="text" name="bottleneck" required /></label>
+          <label>Have you already tried implementing AI internally?*<select name="implementation_status" required><option>Yes, but adoption is weak</option><option>Yes, but setup is messy</option><option>No, we are just getting started</option><option>We are evaluating options</option></select></label>
+          <label>Which area matters most right now?*<select name="priority_area" required><option>Engineering</option><option>Operations</option><option>Documentation</option><option>Internal research</option><option>Team productivity</option><option>Other</option></select></label>
+          <label>What outcome are you hoping to achieve in the next 30 to 60 days?*<input type="text" name="desired_outcome" required /></label>
+          <label>Do you have someone internally who would own adoption after setup?*<select name="adoption_owner" required><option>Yes</option><option>No</option><option>Not sure</option></select></label>
+          <label>What is your timeline?*<select name="timeline" required><option>ASAP</option><option>This month</option><option>This quarter</option><option>Just exploring</option></select></label>
+          <label>Budget range (optional)<select name="budget"><option>Under $1,000</option><option>$1,000 to $2,500</option><option>$2,500 to $5,000</option><option>$5,000+</option><option>Not sure yet</option></select></label>
+        </div>
+        <div class="hero-actions">
+          <button class="btn" type="submit">Continue to booking</button>
+        </div>
+        <p class="muted">By submitting this form, you agree to our <a href="privacy.html">Privacy Policy</a>.</p>
+        <noscript><p class="muted">JavaScript is disabled. After submit, you will be redirected to the confirmation page.</p></noscript>
+      </form>
+    </main>
+    <script>
+      (function () {
+        const form = document.getElementById('discovery-form');
+        const status = document.getElementById('form-status');
+        if (!form || !status || !window.fetch || !window.FormData) return;
+
+        form.addEventListener('submit', async function (event) {
+          event.preventDefault();
+          status.style.display = 'block';
+          status.innerHTML = '<p>Submitting your request...</p>';
+
+          try {
+            const data = new FormData(form);
+            const response = await fetch('/', {
+              method: 'POST',
+              headers: { 'Accept': 'application/json' },
+              body: data,
+            });
+
+            if (!response.ok) {
+              window.location.href = 'booking-error.html';
+              return;
+            }
+            window.location.href = 'confirmation.html';
+          } catch (error) {
+            window.location.href = 'booking-error.html';
+          }
+        });
+      })();
+    </script>
+  </body>
+</html>

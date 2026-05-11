@@ -1,0 +1,19 @@
+{
+  "name": "b2b-ai-implementation",
+  "version": "1.0.0",
+  "description": "Static marketing site for AI workflow implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "python3 scripts/validate_site.py",
+    "install:playwright": "npm install --save-dev playwright",
+    "screenshots": "python3 scripts/capture_screenshots.py --base-url http://127.0.0.1:4173"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "private": true,
+  "devDependencies": {
+    "playwright": "^1.52.0"
+  }
+}
