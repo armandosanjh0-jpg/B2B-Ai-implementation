@@ -3,14 +3,23 @@
 <head>
 <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Book a Discovery Call | Fulcrum AI</title>
+<meta name="description" content="Book a free 20-minute discovery call to see if Fulcrum AI's AI workflow implementation is a fit for your team." />
+<link rel="canonical" href="https://fulcrumai.com/book-a-call.html" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Fulcrum AI" />
+<meta property="og:title" content="Book a Discovery Call | Fulcrum AI" />
+<meta property="og:description" content="A 20-minute call to understand your setup and whether there's a practical AI implementation fit." />
+<meta name="twitter:card" content="summary" />
+<link rel="icon" href="favicon.svg" type="image/svg+xml" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<!-- Analytics: paste your Plausible/Umami/GA snippet here. See README "Analytics". -->
 </head>
 <body>
 <header class="site-header">
   <nav class="container nav">
-    <a class="logo" href="index.html">Fulcrum AI</a>
+    <a class="logo" href="index.html">Fulcrum <span>AI</span></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="services.html">Services</a></li>
@@ -47,15 +56,21 @@
     </article>
   </div>
 
-  <!-- STEP 1: Qualification form -->
-  <!-- To activate: sign up free at formspree.io → create a form → replace YOUR_FORMSPREE_ID below -->
+  <!-- STEP 1: Qualification form (Web3Forms) -->
+  <!-- TO ACTIVATE: go to https://web3forms.com, enter dosa53@outlook.com, copy the access key -->
+  <!-- emailed to you, and paste it into the access_key value below. No account needed. -->
   <form
+    id="lead-form"
     class="qual-form"
-    action="https://formspree.io/f/YOUR_FORMSPREE_ID"
+    action="https://api.web3forms.com/submit"
     method="POST"
   >
-    <input type="hidden" name="_subject" value="New discovery call request — Fulcrum AI" />
-    <input type="hidden" name="_next" value="confirmation.html" />
+    <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
+    <input type="hidden" name="subject" value="New discovery call request — Fulcrum AI" />
+    <input type="hidden" name="from_name" value="Fulcrum AI Website" />
+    <input type="hidden" name="redirect" value="confirmation.html" />
+    <!-- Honeypot spam filter: real users never fill this -->
+    <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off" />
 
     <h3>Tell us about your team</h3>
     <div class="form-grid">
@@ -129,6 +144,7 @@
     <div style="margin-top:1.25rem;">
       <button type="submit" class="btn">Submit &amp; choose a time →</button>
     </div>
+    <p id="form-status" role="status" style="margin-top:1rem;display:none;"></p>
   </form>
 
   <!-- STEP 2: Calendly booking -->
@@ -154,7 +170,51 @@
     </ul>
     <a class="btn btn-small" href="book-a-call.html">Book a Call</a>
   </div>
+  <div class="container footer-legal">
+    <span>© 2026 Fulcrum AI. All rights reserved.</span>
+    <span class="legal-links">
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+      <a href="contact.html">Contact</a>
+      <a href="mailto:dosa53@outlook.com">dosa53@outlook.com</a>
+    </span>
+  </div>
 </footer>
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<script>
+  (function () {
+    var form = document.getElementById("lead-form");
+    var status = document.getElementById("form-status");
+    if (!form) return;
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      var btn = form.querySelector("button[type=submit]");
+      var data = new FormData(form);
+      status.style.display = "block";
+      status.style.color = "var(--muted)";
+      status.textContent = "Sending…";
+      if (btn) { btn.disabled = true; btn.textContent = "Sending…"; }
+      fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" }
+      })
+        .then(function (r) { return r.json(); })
+        .then(function (json) {
+          if (json.success) {
+            window.location.href = "confirmation.html";
+          } else {
+            throw new Error(json.message || "Submission failed");
+          }
+        })
+        .catch(function () {
+          status.style.color = "#ff8a8a";
+          status.textContent =
+            "Something went wrong. Please email us directly at dosa53@outlook.com.";
+          if (btn) { btn.disabled = false; btn.textContent = "Submit & choose a time →"; }
+        });
+    });
+  })();
+</script>
 </body>
 </html>
