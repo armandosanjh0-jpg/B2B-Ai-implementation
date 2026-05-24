@@ -1,6 +1,6 @@
-# Fulcrum AI — Website
+# Polybius AI — Website
 
-Marketing site for Fulcrum AI, an AI workflow implementation agency for lean teams.
+Marketing site for Polybius AI, an AI workflow implementation agency for lean teams.
 Static HTML/CSS — no build step, no dependencies.
 
 ## Pages
@@ -31,15 +31,13 @@ delivered until you set the Web3Forms key.**
    - Submit a test from the live page and confirm the email arrives.
 
 2. **Calendly** — the widget points to `calendly.com/armandosanjh0` and is live.
-   ⚠️ The live event is currently **"30 Minute Meeting"**, but the site copy says
-   **"20-minute call"** throughout. Make them match: either create/rename a
-   20-minute event in Calendly (recommended — lower commitment lifts bookings) or
-   find-and-replace "20-minute"/"20 minutes" → "30" across the HTML.
+   The site copy and the Calendly event now both say **30 minutes** — matched.
+   Just confirm the event is published and titled clearly (e.g. "Discovery Call").
 
 ## Recommended before launch
 
 3. **Domain in metadata** — canonical tags, `sitemap.xml`, and `robots.txt`
-   currently use `https://fulcrumai.com/`. Find-and-replace that with your real
+   currently use `https://polybiusai.com/`. Find-and-replace that with your real
    domain once chosen. If using the default GitHub Pages URL, it will be
    `https://armandosanjh0-jpg.github.io/B2B-Ai-implementation/`.
 

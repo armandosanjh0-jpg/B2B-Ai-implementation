@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /confirmation.html
 
-Sitemap: https://fulcrumai.com/sitemap.xml
+Sitemap: https://polybiusai.com/sitemap.xml

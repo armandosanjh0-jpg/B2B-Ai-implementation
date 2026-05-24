@@ -1,4 +1,4 @@
-# Fulcrum AI — Go-To-Market & Marketing Plan
+# Polybius AI — Go-To-Market & Marketing Plan
 
 A practical plan to land your **first 3–5 paying clients in 90 days** with zero ad
 budget, then build a repeatable lead engine. Written for a new, founder-led AI
@@ -73,7 +73,7 @@ customized, and adopted in weeks, not someday."*
 
 Lead with a **low-friction entry offer** to build proof, then upsell.
 
-1. **Free AI Workflow Teardown (lead magnet / hook)** — 20-min call + a 1-page
+1. **Free AI Workflow Teardown (lead magnet / hook)** — 30-min call + a 1-page
    written "here are your 3 highest-ROI AI workflows" doc. Free. Builds trust +
    pipeline. This is your outreach call-to-action.
 2. **AI Setup & Training Sprint — from $1,000** (entry, fast yes)
@@ -118,7 +118,7 @@ case study. Removes the "no proof" objection.
   1. *Teardowns* — "Here's a workflow I'd build for a [niche] team" (most shareable)
   2. *Before/after* — time saved, output quality (use your own + client results)
   3. *Myth-busting* — "AI adoption fails because of X, not the tool"
-  4. *Behind the scenes* — how you run Fulcrum on Claude (proof you practice it)
+  4. *Behind the scenes* — how you run Polybius on Claude (proof you practice it)
 - Every post ends with a soft CTA to the free teardown.
 - Engage 20 min/day on ICP prospects' posts *before* you DM them (warms them up).
 
@@ -148,7 +148,7 @@ ads + Google search ("AI consultant for [niche]") once you can afford to test.
 ## 6. 90-day launch playbook
 
 ### Weeks 1–2 — Foundation
-- [ ] Finish site launch (set Web3Forms key, pick domain, fix Calendly 20-min event).
+- [ ] Finish site launch (set Web3Forms key, pick domain, confirm Calendly 30-min event is live).
 - [ ] Pick 1–2 niches from §2.
 - [ ] Build a list of 200 ICP prospects (spreadsheet: company, name, email, LinkedIn, trigger).
 - [ ] Set up a simple CRM (Notion, Airtable, or a Google Sheet) with a pipeline:
@@ -209,14 +209,14 @@ Pitch your first 3–5 clients explicitly as founding clients:
 >
 > That's all I do: install, customize, and train teams on AI workflows that stick.
 >
-> Want a free 20-min teardown? I'll map the 3 highest-ROI AI workflows for a team
+> Want a free 30-min teardown? I'll map the 3 highest-ROI AI workflows for a team
 > like yours — yours to keep whether or not we work together.
 >
-> Worth a quick look? — {Your name}, Fulcrum AI
+> Worth a quick look? — {Your name}, Polybius AI
 
 ### Cold email — follow-up (day 3, reply in thread)
 > Hi {First name} — floating this back up. The teardown is genuinely free and
-> takes 20 minutes. If now's not the time, just say "not now" and I'll stop. 🙂
+> takes 30 minutes. If now's not the time, just say "not now" and I'll stop. 🙂
 
 ### Cold email — value-add follow-up (day 7)
 > {First name}, here's one your team could use today: {one concrete, specific
@@ -238,7 +238,7 @@ Pitch your first 3–5 clients explicitly as founding clients:
 > workflow teardowns for teams like {Company} if useful — no pitch, just value.
 
 ### Warm / referral ask
-> Hey {Name} — I just launched Fulcrum AI; we get teams from "we have AI tools" to
+> Hey {Name} — I just launched Polybius AI; we get teams from "we have AI tools" to
 > "AI is part of how we work." Do you know any 5–50 person teams that are
 > AI-curious but stuck? I'm doing free teardowns for a few this month and would
 > love an intro.
