@@ -7,3 +7,4 @@ leads*.csv
 requirements-agent.txt
 outreach_results.json
 .env
+outreach_*.md
