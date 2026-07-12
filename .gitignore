@@ -1,2 +1,9 @@
-.claude/
-.DS_Store
+__pycache__/
+*.pyc
+OUTREACH-STRATEGY.md
+MARKETING-PLAN.md
+sales_agent.py
+leads*.csv
+requirements-agent.txt
+outreach_results.json
+.env
