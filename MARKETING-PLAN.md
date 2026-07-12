@@ -1,4 +1,4 @@
-# Polybius AI — Go-To-Market & Marketing Plan
+# Novelle — Go-To-Market & Marketing Plan
 
 A practical plan to land your **first 3–5 paying clients in 90 days** with zero ad
 budget, then build a repeatable lead engine. Written for a new, founder-led AI
@@ -118,7 +118,7 @@ case study. Removes the "no proof" objection.
   1. *Teardowns* — "Here's a workflow I'd build for a [niche] team" (most shareable)
   2. *Before/after* — time saved, output quality (use your own + client results)
   3. *Myth-busting* — "AI adoption fails because of X, not the tool"
-  4. *Behind the scenes* — how you run Polybius on Claude (proof you practice it)
+  4. *Behind the scenes* — how you run Novelle on Claude (proof you practice it)
 - Every post ends with a soft CTA to the free teardown.
 - Engage 20 min/day on ICP prospects' posts *before* you DM them (warms them up).
 
@@ -212,7 +212,7 @@ Pitch your first 3–5 clients explicitly as founding clients:
 > Want a free 30-min teardown? I'll map the 3 highest-ROI AI workflows for a team
 > like yours — yours to keep whether or not we work together.
 >
-> Worth a quick look? — {Your name}, Polybius AI
+> Worth a quick look? — {Your name}, Novelle
 
 ### Cold email — follow-up (day 3, reply in thread)
 > Hi {First name} — floating this back up. The teardown is genuinely free and
@@ -238,7 +238,7 @@ Pitch your first 3–5 clients explicitly as founding clients:
 > workflow teardowns for teams like {Company} if useful — no pitch, just value.
 
 ### Warm / referral ask
-> Hey {Name} — I just launched Polybius AI; we get teams from "we have AI tools" to
+> Hey {Name} — I just launched Novelle; we get teams from "we have AI tools" to
 > "AI is part of how we work." Do you know any 5–50 person teams that are
 > AI-curious but stuck? I'm doing free teardowns for a few this month and would
 > love an intro.

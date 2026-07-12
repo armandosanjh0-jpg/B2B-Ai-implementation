@@ -1,6 +1,6 @@
-# Polybius AI — Website
+# Novelle — Website
 
-Marketing site for Polybius AI, an AI workflow implementation agency for lean teams.
+Marketing site for Novelle, an AI workflow implementation agency for lean teams.
 Static HTML/CSS — no build step, no dependencies.
 
 ## Pages
@@ -37,7 +37,7 @@ delivered until you set the Web3Forms key.**
 ## Recommended before launch
 
 3. **Domain in metadata** — canonical tags, `sitemap.xml`, and `robots.txt`
-   currently use `https://polybiusai.com/`. Find-and-replace that with your real
+   currently use `https://NOVELLE-DOMAIN-TBD/`. Find-and-replace that with your real
    domain once chosen. If using the default GitHub Pages URL, it will be
    `https://armandosanjh0-jpg.github.io/B2B-Ai-implementation/`.
 
@@ -78,3 +78,90 @@ python3 -m http.server 8000
 
 See [`MARKETING-PLAN.md`](MARKETING-PLAN.md) for the go-to-market plan, ICP,
 channels, outreach templates, and 90-day playbook.
+
+## Outreach sales agent (Claude-powered)
+
+Use `sales_agent.py` to generate personalized cold email + LinkedIn outreach for leads using your existing `OUTREACH-STRATEGY.md`.
+
+### 1) Install dependencies
+
+```sh
+python3 -m pip install -r requirements-agent.txt
+```
+
+### 2) Set your Claude API key
+
+```sh
+export ANTHROPIC_API_KEY="{{ANTHROPIC_API_KEY}}"
+```
+
+### 3) Run the agent
+
+```sh
+python3 sales_agent.py --leads leads.sample.csv --output outreach_results.json
+```
+
+If you want every generated outreach record sent to your Zapier flow (e.g., to create/send Outlook drafts), set a Zapier Catch Hook URL:
+
+```sh
+export ZAPIER_WEBHOOK_URL="{{ZAPIER_WEBHOOK_URL}}"
+python3 sales_agent.py --leads leads.sample.csv --output outreach_results.json
+```
+
+Or pass it directly:
+
+```sh
+python3 sales_agent.py --leads leads.sample.csv --output outreach_results.json --zapier-webhook-url "{{ZAPIER_WEBHOOK_URL}}"
+```
+
+### 4) Input/output
+
+- Input CSV headers:
+  `name, role, company, company_size, industry, notes`
+- Output:
+  `outreach_results.json` with lead score, fit tier, outreach angle, email draft, LinkedIn messages, and follow-ups.
+  If Zapier is configured, each lead record is also POSTed as JSON to your webhook.
+
+### Zapier payload fields
+
+Each webhook request includes:
+- Event fields:
+  - `source`
+  - `created_at`
+  - `zapier_event`
+  - `zapier_version`
+- Lead fields:
+  - `lead_name`
+  - `lead_email`
+  - `lead_role`
+  - `lead_company`
+  - `lead_company_size`
+  - `lead_industry`
+  - `lead_notes`
+- Qualification fields:
+  - `lead_score`
+  - `fit_tier`
+  - `outreach_angle`
+- Outlook step input fields:
+  - `outlook_to_email`
+  - `outlook_to_name`
+  - `outlook_subject`
+  - `outlook_body`
+- LinkedIn fields:
+  - `linkedin_connect_note`
+  - `linkedin_first_dm`
+- Follow-up step input fields:
+  - `followup_1_day_offset`
+  - `followup_1_scheduled_at`
+  - `followup_1_subject`
+  - `followup_1_body`
+  - `followup_2_day_offset`
+  - `followup_2_scheduled_at`
+  - `followup_2_subject`
+  - `followup_2_body`
+
+Compatibility fields are also included:
+- `lead` (original lead object)
+- `outreach` (raw Claude output)
+- `outlook_draft` (nested object)
+- `follow_up_plan` (nested array)
